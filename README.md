@@ -11,7 +11,9 @@ To create only for one platform, use the parameter ios or android.
 **It requires the curl, imagemagick and jquery installed.** but pub will try to install automatically all dependencies needed.
 
 ~ pub
+
 ~ pub ios
+
 ~ pub android
 
 ### Dependencies ###
