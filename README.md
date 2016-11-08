@@ -27,7 +27,7 @@ To install it right away for all UNIX users (Linux, OS X, etc.), copy and paste 
 ```
 #!shell
 
-sudo wget https://github.com/sevenb/pub/blob/master/pub -O /usr/local/bin/pub
+sudo wget https://raw.githubusercontent.com/sevenb/pub/master/pub -O /usr/local/bin/pub
 sudo chmod a+rx /usr/local/bin/pub
 ```
 
@@ -37,6 +37,6 @@ or
 ```
 #!shell
 
-sudo curl -L https://github.com/sevenb/pub/blob/master/pub -o /usr/local/bin/pub
+sudo curl -L https://raw.githubusercontent.com/sevenb/pub/master/pub -o /usr/local/bin/pub
 sudo chmod a+rx /usr/local/bin/pub
 ```
