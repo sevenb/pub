@@ -1,6 +1,7 @@
 {
     "playstore":[
         {
+            "folder":"android",
             "size":"512x512",
             "filename":"playstore-icon.png"
         }
