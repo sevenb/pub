@@ -1,0 +1,160 @@
+#!/bin/bash
+# by www.brunoneves.com
+
+header(){
+     echo  "          _____                    _____                    _____           "
+     echo  "         /\    \                  /\    \                  /\    \          "
+     echo  "        /::\    \                /::\____\                /::\    \         "
+     echo  "       /::::\    \              /:::/    /               /::::\    \        "
+     echo  "      /::::::\    \            /:::/    /               /::::::\    \       "
+     echo  "     /:::/\:::\    \          /:::/    /               /:::/\:::\    \      "
+     echo  "    /:::/__\:::\    \        /:::/    /               /:::/__\:::\    \     "
+     echo  "   /::::\   \:::\    \      /:::/    /               /::::\   \:::\    \    "
+     echo  "  /::::::\   \:::\    \    /:::/    /      _____    /::::::\   \:::\    \   "
+     echo  " /:::/\:::\   \:::\____\  /:::/____/      /\    \  /:::/\:::\   \:::\ ___\  "
+     echo  "/:::/  \:::\   \:::|    ||:::|    /      /::\____\/:::/__\:::\   \:::|    | "
+     echo  "\::/    \:::\  /:::|____||:::|____\     /:::/    /\:::\   \:::\  /:::|____| "
+     echo  " \/_____/\:::\/:::/    /  \:::\    \   /:::/    /  \:::\   \:::\/:::/    /  "
+     echo  "          \::::::/    /    \:::\    \ /:::/    /    \:::\   \::::::/    /   "
+     echo  "           \::::/    /      \:::\    /:::/    /      \:::\   \::::/    /    "
+     echo  "            \::/____/        \:::\__/:::/    /        \:::\  /:::/    /     "
+     echo  "             ~~               \::::::::/    /          \:::\/:::/    /      "
+     echo  "                               \::::::/    /            \::::::/    /       "
+     echo  "                                \::::/    /              \::::/    /        "
+     echo  "                                 \::/____/                \::/____/         "
+     echo  "                                  ~~                       ~~               "
+     echo  "                                                                            "
+     echo  "                          MOBILE ASSETS FACTORY  by www.brunoneves.com      "
+}
+
+export RESULT=`find /usr/local/ -name imagemagick | wc -l`
+
+if [ $RESULT == "0" ]; then 
+    echo "Imagemagick need to be installed!" |  brew install imagemagick | brew install jq
+fi
+
+#Icons
+APP_ICONS_FOLDER="app_icon/"
+
+#Load iOS icons json configuration
+IOS=$(curl 'https://raw.githubusercontent.com/sevenb/pub/master/ios.json')
+
+#IOS configurations
+#iOS
+IOS_APP_ICONS_FOLDER=($( echo ${IOS} | jq -r '.artworks[].folder' ))
+IOS_ICONS_FOLDER=($( echo ${IOS} | jq -r '.icons[].folder' ))
+
+IOS_ART_WORK=($( echo ${IOS} | jq -r '.artworks[].filename' ))
+IOS_ART_WORK_SIZE=($( echo ${IOS} | jq -r '.artworks[].size' ))
+IOS_ICON_FILENAME=($( echo ${IOS} | jq -r '.icons[].filename' ))
+IOS_ICON_SIZE=($( echo ${IOS} | jq -r '.icons[].size' ))
+
+#Load Android icons json configuration
+ANDROID=$(curl 'https://raw.githubusercontent.com/sevenb/pub/master/android.json')
+
+#ANDROID
+ANDROID_ICONS_FOLDER=($( echo ${ANDROID} | jq -r '.playstore[].folder' ))
+
+#ANDROID configurations
+ANDROID_ART_WORK=($( echo ${ANDROID} | jq -r '.playstore[].filename' ))
+ANDROID_PLAYSTORE_SIZE=($( echo ${ANDROID} | jq -r '.playstore[].size' ))
+
+ANDROID_ICON=($( echo ${ANDROID} | jq -r '.icons[].filename' ))
+ANDROID_ICON_SIZE=($( echo ${ANDROID} | jq -r '.icons[].size' ))
+ANDROID_ICON_FOLDER=($( echo ${ANDROID} | jq -r '.icons[].folder' ))
+
+start_icons(){
+    if [ -d "$IOS_APP_ICONS_FOLDER" -a ! -h "$IOS_APP_ICONS_FOLDER" ]
+        then
+            rm -rf $IOS_APP_ICONS_FOLDER
+    fi
+    mkdir  $IOS_APP_ICONS_FOLDER
+}
+
+export_iOS_icons(){
+
+    if [ -d "$IOS_APP_ICONS_FOLDER" -a ! -h "$IOS_APP_ICONS_FOLDER" ]
+        then
+            rm -rf $IOS_APP_ICONS_FOLDER
+    fi
+
+    mkdir $IOS_APP_ICONS_FOLDER
+
+    for file in *.png; 
+        do 
+            #1-Starting Art Work Factory
+            echo -ne "░░░░░"
+            INDEX=0
+            for i in "${IOS_ART_WORK[@]}"
+                do  
+                    echo -ne "░░░░░"
+                    convert $file -resize ${IOS_ART_WORK_SIZE[$INDEX]]} "$IOS_APP_ICONS_FOLDER/$i"
+                    INDEX=$((INDEX+1))
+            done
+            echo -ne "░░░░░"
+            
+            #2-Starting Icons Factory
+            mkdir $IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/
+            echo -ne "░░░░░"
+            INDEX=0
+            for i in ${IOS_ICON_FILENAME[@]}
+                do
+                echo -ne "░░░░░"
+                convert $file -resize ${IOS_ICON_SIZE[$INDEX]} "$IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/$i"
+                INDEX=$((INDEX+1))
+            done
+            echo -ne "░░░░░"
+    done
+}
+
+export_Android_icons(){
+
+    if [ -d "$ANDROID_ICONS_FOLDER" -a ! -h "$ANDROID_ICONS_FOLDER" ]
+        then
+            rm -rf $ANDROID_ICONS_FOLDER
+    fi
+
+    mkdir "$ANDROID_ICONS_FOLDER"
+    
+     for file in *.png; 
+        do 
+            #1-Starting Art Work Factory
+            echo -ne "░░░░░"
+            INDEX=0
+            for i in "${ANDROID_ART_WORK[@]}"
+                do  
+                    echo -ne "░░░░░"
+                    convert $file -resize ${ANDROID_PLAYSTORE_SIZE[$INDEX]]} "$ANDROID_ICONS_FOLDER/$i"
+                    INDEX=$((INDEX+1))
+            done
+            echo -ne "░░░░░"
+            
+            #2-Starting Icons Factory
+            echo -ne "░░░░░"
+            INDEX=0
+            for i in ${ANDROID_ICON[@]}
+                do
+                mkdir $ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}
+                echo -ne "░░░░░"
+                convert $file -resize ${ANDROID_ICON_SIZE[$INDEX]} "$ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}/$i"
+                INDEX=$((INDEX+1))
+            done
+            echo -ne "░░░░░ ASSETS CREATED!!! GO TO THE PUB!!!"
+    done
+}
+
+if [ $1 == "ios" ]
+    then
+        header
+        export_iOS_icons
+elif [ $1 == "android" ]
+    then
+        header
+        export_Android_icons
+else
+    header
+    export_iOS_icons 
+    export_Android_icons
+fi
+
+
