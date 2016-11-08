@@ -3,7 +3,10 @@ MOBILE ASSETS FACTORY
 
 PUB is a command-line program to create iOS and Android app icons assets.
 
-Just run pub on terminal to create all app icons.
+Just run pub on the folder with the default icon image(.png 1536x1536) to create all app icons.
+
+Ex: 
+~myfolder: pub ios
 
 To create only for one platform, use ios or android parameters.
 
