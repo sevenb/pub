@@ -83,27 +83,27 @@ export_iOS_icons(){
     for file in *.png; 
         do 
             #1-Starting Art Work Factory
-            echo -ne "░░░░░"
+            loader
             INDEX=0
             for i in "${IOS_ART_WORK[@]}"
                 do  
-                    echo -ne "░░░░░"
+                    loader
                     convert $file -resize ${IOS_ART_WORK_SIZE[$INDEX]]} "$IOS_APP_ICONS_FOLDER/$i"
                     INDEX=$((INDEX+1))
             done
-            echo -ne "░░░░░"
+            loader
             
             #2-Starting Icons Factory
             mkdir $IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/
-            echo -ne "░░░░░"
+            loader
             INDEX=0
             for i in ${IOS_ICON_FILENAME[@]}
                 do
-                echo -ne "░░░░░"
+                loader
                 convert $file -resize ${IOS_ICON_SIZE[$INDEX]} "$IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/$i"
                 INDEX=$((INDEX+1))
             done
-            echo -ne "░░░░░"
+            loader
     done
 }
 
@@ -119,28 +119,33 @@ export_Android_icons(){
      for file in *.png; 
         do 
             #1-Starting Art Work Factory
-            echo -ne "░░░░░"
+            loader
             INDEX=0
             for i in "${ANDROID_ART_WORK[@]}"
                 do  
-                    echo -ne "░░░░░"
+                    loader
                     convert $file -resize ${ANDROID_PLAYSTORE_SIZE[$INDEX]]} "$ANDROID_ICONS_FOLDER/$i"
                     INDEX=$((INDEX+1))
             done
-            echo -ne "░░░░░"
+            loader
             
             #2-Starting Icons Factory
-            echo -ne "░░░░░"
+            loader
             INDEX=0
             for i in ${ANDROID_ICON[@]}
                 do
                 mkdir $ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}
-                echo -ne "░░░░░"
+                loader
                 convert $file -resize ${ANDROID_ICON_SIZE[$INDEX]} "$ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}/$i"
                 INDEX=$((INDEX+1))
             done
-            echo -ne "░░░░░ ASSETS CREATED!!! GO TO THE PUB!!!"
+            loader
+            echo -ne "ASSETS CREATED!!! GO TO THE PUB!!!"
     done
+}
+
+loader(){
+    echo -ne "░░░░░"
 }
 
 if [ $1 == "ios" ]
