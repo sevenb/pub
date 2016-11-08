@@ -5,10 +5,7 @@ PUB is a command-line program to create iOS and Android app icons assets.
 
 Just run pub on terminal to create all app icons.
 
-To create only for one platform, use the parameter ios or android.
-
-
-**It requires the curl, imagemagick and jquery installed.** but pub will try to install automatically all dependencies needed.
+To create only for one platform, use ios or android parameters.
 
 ~ pub
 
@@ -18,8 +15,7 @@ To create only for one platform, use the parameter ios or android.
 
 ### Dependencies ###
 
-* Python 
-* Wget
+**It requires the curl, imagemagick and jquery installed.** but pub will try to install automatically all dependencies needed.
 
 # Install #
 
