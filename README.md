@@ -1,5 +1,5 @@
-# **pub command-line program for UNIX **
-MOBILE ASSETS FACTORY
+<h1>PUB</h1>
+# **Mobile assets factory command-line program **
 
 PUB is a command-line program to create iOS and Android app icons assets.
 
