@@ -1,153 +1,156 @@
 {
     "artworks":[
         {
+            "folder":"ios",
             "size":"512x512",
             "filename":"iTunesArtwork@1x.png"
         },
         {
+            "folder":"ios",
             "size":"1024x1024",
             "filename":"iTunesArtwork@2x.png"
         }
         ,{
+            "folder":"ios",
             "size":"1536x1536",
             "filename":"iTunesArtwork@3x.png"
         }
     ],
     "icons":[
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"40x40",
             "scale":"2",
             "filename":"Icon-App-20x20@2x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"60x60",
             "scale":"3",
             "filename":"Icon-App-20x20@3x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"29x29",
             "scale":"1",
             "filename":"Icon-App-29x29@1x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"58x58",
             "scale":"2",
             "filename":"Icon-App-29x29@2x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"87x87",
             "scale":"3",
             "filename":"Icon-App-29x29@3x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"40x40",
             "scale":"1",
             "filename":"Icon-App-40x40@1x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"96x96",
             "scale":"2",
             "filename":"Icon-App-40x40@2x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"144x144",
             "scale":"3",
             "filename":"Icon-App-40x40@3x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"57x57",
             "scale":"1",
             "filename":"Icon-App-57x57@1x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"60x60",
             "scale":"1",
             "filename":"Icon-App-60x60@1x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"136x136",
             "scale":"2",
             "filename":"Icon-App-60x60@2x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"204x204",
             "scale":"3",
             "filename":"Icon-App-60x60@3x.png"
         },
         {
-            "idiom":"iphone",
+            "folder":"AppIcon.appiconset",
             "size":"76x76",
             "scale":"1",
             "filename":"Icon-App-76x76@1x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"20x20",
             "scale":"1",
             "filename":"Icon-App-20x20@1x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"40x40",
             "scale":"2",
             "filename":"Icon-App-20x20@2x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"29x29",
             "scale":"1",
             "filename":"Icon-App-29x29@1x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"58x58",
             "scale":"2",
             "filename":"Icon-App-29x29@2x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"40x40",
             "scale":"1",
             "filename":"Icon-App-40x40@1x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"80x80",
             "scale":"2",
             "filename":"Icon-App-40x40@2x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"76x76",
             "scale":"1",
             "filename":"Icon-App-76x76@1x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"152x152",
             "scale":"2",
             "filename":"Icon-App-76x76@2x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"228x228",
             "scale":"3",
             "filename":"Icon-App-76x76@3x.png"
         },
         {
-            "idiom":"ipad",
+            "folder":"AppIcon.appiconset",
             "size":"167x167",
             "scale":"2",
             "filename":"Icon-App-83.5x83.5@2x.png"
