@@ -1,0 +1,44 @@
+{
+    "playstore":[
+        {
+            "size":"512x512",
+            "filename":"playstore-icon.png"
+        }
+    ],
+    "icons":[
+        {
+            "folder":"mipmap-hdpi",
+            "size":"472x72",
+            "filename":"ic_launcher.png"
+        },
+        {
+            "folder":"mipmap-ldpi",
+            "size":"36x36",
+            "filename":"ic_launcher.png"
+        },
+        {
+            "folder":"mipmap-mdpi",
+            "size":"48x48",
+            "filename":"ic_launcher.png"
+        },
+        {
+            "folder":"mipmap-xhdpi",
+            "size":"96x96",
+            "filename":"ic_launcher.png"
+        },
+        {
+            "folder":"mipmap-xxhdpi",
+            "size":"144x144",
+            "filename":"ic_launcher.png"
+        },
+        {
+            "folder":"mipmap-xxxhdpi",
+            "size":"192x192",
+            "filename":"ic_launcher.png"
+        }
+    ],
+    "info":{
+        "version":1,
+        "author":"Bruno Neves"
+    }
+}
