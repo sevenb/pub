@@ -1,4 +1,4 @@
-<h1>PUB</h1>
+<h1>PUB for MAC</h1>
 # **Mobile assets factory command-line program **
 
 PUB is a command-line program to create iOS and Android app icons assets.
@@ -22,7 +22,7 @@ To create only for one platform, use ios or android parameters.
 
 # Install #
 
-To install it right away for all UNIX users (Linux, OS X, etc.), copy and paste on terminal:
+To install it right away for MAC users, copy and paste on terminal:
 
 
 ```
