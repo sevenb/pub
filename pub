@@ -68,7 +68,7 @@ start_icons(){
         then
             rm -rf $IOS_APP_ICONS_FOLDER
     fi
-    mkdir  -p "$IOS_APP_ICONS_FOLDER"
+    mkdir  -p "/$IOS_APP_ICONS_FOLDER"
 }
 
 export_iOS_icons(){
@@ -78,7 +78,7 @@ export_iOS_icons(){
             rm -rf $IOS_APP_ICONS_FOLDER
     fi
 
-    mkdir -p "$IOS_APP_ICONS_FOLDER"
+    mkdir -p "/$IOS_APP_ICONS_FOLDER"
 
     for file in *.png; 
         do 
@@ -94,7 +94,7 @@ export_iOS_icons(){
             loader
             
             #2-Starting Icons Factory
-            mkdir -p "$IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/"
+            mkdir -p "/$IOS_APP_ICONS_FOLDER/$IOS_ICONS_FOLDER/"
             loader
             INDEX=0
             for i in ${IOS_ICON_FILENAME[@]}
@@ -114,7 +114,7 @@ export_Android_icons(){
             rm -rf $ANDROID_ICONS_FOLDER
     fi
 
-    mkdir -p "$ANDROID_ICONS_FOLDER"
+    mkdir -p "/$ANDROID_ICONS_FOLDER"
     
      for file in *.png; 
         do 
@@ -134,7 +134,7 @@ export_Android_icons(){
             INDEX=0
             for i in ${ANDROID_ICON[@]}
                 do
-                mkdir -p "$ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}"
+                mkdir -p "/$ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}"
                 loader
                 convert $file -resize ${ANDROID_ICON_SIZE[$INDEX]} "$ANDROID_ICONS_FOLDER/${ANDROID_ICON_FOLDER[$INDEX]}/$i"
                 INDEX=$((INDEX+1))
