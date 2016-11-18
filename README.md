@@ -8,13 +8,18 @@ Just run pub on the folder with the default icon image(.png 1536x1536) to create
 Ex: 
 ~myfolder: pub ios
 
-To create only for one platform, use ios or android parameters.
+Run on terminal:
 
 ~ pub
-
+  
+  or
+  
 ~ pub ios
-
+  
+  or
+  
 ~ pub android
+
 
 ### Dependencies ###
 
