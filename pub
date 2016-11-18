@@ -27,12 +27,6 @@ header(){
      echo  "                          MOBILE ASSETS FACTORY  by www.brunoneves.com      "
 }
 
-export RESULT=`find /usr/local/ -name imagemagick | wc -l`
-
-if [ $RESULT == "0" ]; then 
-    echo "Imagemagick need to be installed!" |  brew install imagemagick | brew install jq
-fi
-
 #Icons
 APP_ICONS_FOLDER="app_icon/"
 
@@ -161,5 +155,4 @@ else
     export_iOS_icons 
     export_Android_icons
 fi
-
 
