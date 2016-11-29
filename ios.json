@@ -61,7 +61,7 @@
         },
         {
             "folder":"AppIcon.appiconset",
-            "size":"144x144",
+            "size":"120x120",
             "scale":"3",
             "filename":"Icon-App-40x40@3x.png"
         },
@@ -79,13 +79,13 @@
         },
         {
             "folder":"AppIcon.appiconset",
-            "size":"136x136",
+            "size":"120x120",
             "scale":"2",
             "filename":"Icon-App-60x60@2x.png"
         },
         {
             "folder":"AppIcon.appiconset",
-            "size":"204x204",
+            "size":"180x180",
             "scale":"3",
             "filename":"Icon-App-60x60@3x.png"
         },
