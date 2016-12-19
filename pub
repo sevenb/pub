@@ -27,35 +27,41 @@ header(){
      echo  "                          MOBILE ASSETS FACTORY  by www.brunoneves.com      "
 }
 
+#Base Dir
+BASE="https://raw.githubusercontent.com/sevenb/pub/master"
+
 #Icons
 APP_ICONS_FOLDER="app_icon/"
 
-#Load iOS icons json configuration
-IOS=$(curl 'https://raw.githubusercontent.com/sevenb/pub/master/ios.json')
+start_ios_conf(){
+    #Load iOS icons json configuration
+    IOS=$(curl "${BASE}/ios.json")
 
-#IOS configurations
-#iOS
-IOS_APP_ICONS_FOLDER=($( echo ${IOS} | jq -r '.artworks[].folder' ))
-IOS_ICONS_FOLDER=($( echo ${IOS} | jq -r '.icons[].folder' ))
+    #IOS configurations
+    IOS_APP_ICONS_FOLDER=($( echo ${IOS} | jq -r '.artworks[].folder' ))
+    IOS_ICONS_FOLDER=($( echo ${IOS} | jq -r '.icons[].folder' ))
 
-IOS_ART_WORK=($( echo ${IOS} | jq -r '.artworks[].filename' ))
-IOS_ART_WORK_SIZE=($( echo ${IOS} | jq -r '.artworks[].size' ))
-IOS_ICON_FILENAME=($( echo ${IOS} | jq -r '.icons[].filename' ))
-IOS_ICON_SIZE=($( echo ${IOS} | jq -r '.icons[].size' ))
+    IOS_ART_WORK=($( echo ${IOS} | jq -r '.artworks[].filename' ))
+    IOS_ART_WORK_SIZE=($( echo ${IOS} | jq -r '.artworks[].size' ))
+    IOS_ICON_FILENAME=($( echo ${IOS} | jq -r '.icons[].filename' ))
+    IOS_ICON_SIZE=($( echo ${IOS} | jq -r '.icons[].size' ))
+}
 
-#Load Android icons json configuration
-ANDROID=$(curl 'https://raw.githubusercontent.com/sevenb/pub/master/android.json')
+start_android_conf(){
+    #Load Android icons json configuration
+    ANDROID=$(curl "${BASE}/android.json")
 
-#ANDROID
-ANDROID_ICONS_FOLDER=($( echo ${ANDROID} | jq -r '.playstore[].folder' ))
+    #ANDROID
+    ANDROID_ICONS_FOLDER=($( echo ${ANDROID} | jq -r '.playstore[].folder' ))
 
-#ANDROID configurations
-ANDROID_ART_WORK=($( echo ${ANDROID} | jq -r '.playstore[].filename' ))
-ANDROID_PLAYSTORE_SIZE=($( echo ${ANDROID} | jq -r '.playstore[].size' ))
+    #ANDROID configurations
+    ANDROID_ART_WORK=($( echo ${ANDROID} | jq -r '.playstore[].filename' ))
+    ANDROID_PLAYSTORE_SIZE=($( echo ${ANDROID} | jq -r '.playstore[].size' ))
 
-ANDROID_ICON=($( echo ${ANDROID} | jq -r '.icons[].filename' ))
-ANDROID_ICON_SIZE=($( echo ${ANDROID} | jq -r '.icons[].size' ))
-ANDROID_ICON_FOLDER=($( echo ${ANDROID} | jq -r '.icons[].folder' ))
+    ANDROID_ICON=($( echo ${ANDROID} | jq -r '.icons[].filename' ))
+    ANDROID_ICON_SIZE=($( echo ${ANDROID} | jq -r '.icons[].size' ))
+    ANDROID_ICON_FOLDER=($( echo ${ANDROID} | jq -r '.icons[].folder' ))
+}
 
 start_icons(){
     if [ -d "$IOS_APP_ICONS_FOLDER" -a ! -h "$IOS_APP_ICONS_FOLDER" ]
@@ -66,6 +72,8 @@ start_icons(){
 }
 
 export_iOS_icons(){
+
+    start_ios_conf
 
     if [ -d "$IOS_APP_ICONS_FOLDER" -a ! -h "$IOS_APP_ICONS_FOLDER" ]
         then
@@ -103,6 +111,8 @@ export_iOS_icons(){
 
 export_Android_icons(){
 
+    start_android_conf
+
     if [ -d "$ANDROID_ICONS_FOLDER" -a ! -h "$ANDROID_ICONS_FOLDER" ]
         then
             rm -rf $ANDROID_ICONS_FOLDER
@@ -134,7 +144,7 @@ export_Android_icons(){
                 INDEX=$((INDEX+1))
             done
             loader
-            echo -ne "ASSETS CREATED!!! GO TO THE PUB!!!"
+            echo -ne "ASSETS CREATED!"
     done
 }
 
@@ -152,7 +162,7 @@ elif [ $1 == "android" ]
         export_Android_icons
 else
     header
-    export_iOS_icons 
+    export_iOS_icons
     export_Android_icons
 fi
 
