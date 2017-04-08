@@ -1,7 +1,6 @@
 <h1>PUB for MAC</h1>
 
-<a href="https://asciinema.org/a/511qmkgaz2xk0mo3x8tu7weh7" target="_blank"><img src="https://asciinema.org/a/511qmkgaz2xk0mo3x8tu7weh7.png" /></a>
-
+<a href="https://asciinema.org/a/112055" target="_blank"><img src="https://asciinema.org/a/112055.png" /></a>
 # **Mobile assets factory command-line program **
 
 PUB is a command-line program to create iOS and Android app icons assets.
