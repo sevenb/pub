@@ -25,8 +25,7 @@ Run on terminal:
 
 ### Dependencies ###
 
-**It requires the curl, imagemagick and jquery installed.** but pub will try to install automatically all dependencies needed.
-
+**It requires the curl, imagemagick and jquery installed.** 
 # Install #
 
 To install it right away for MAC users, copy and paste on terminal:
