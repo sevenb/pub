@@ -26,6 +26,9 @@ Run on terminal:
 ### Dependencies ###
 
 **It requires the curl, imagemagick and jq installed.** 
+pip3 install jq
+brew install imagemagick
+
 # Install #
 
 To install it right away for MAC users, copy and paste on terminal:
